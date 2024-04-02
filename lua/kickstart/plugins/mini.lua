@@ -32,6 +32,15 @@ return {
         return '%2l:%-2v'
       end
 
+      -- mini animate
+      require('mini.animate').setup()
+
+      -- mini pairs
+      require('mini.pairs').setup()
+
+      -- mini indenscope
+      require('mini.indentscope').setup()
+
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
