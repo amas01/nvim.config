@@ -12,6 +12,9 @@ vim.keymap.set('n', '0', '_')
 vim.keymap.set('n', '<CR>', 'o<Esc>')
 vim.keymap.set('n', '<S-CR>', 'm`O<Esc>``')
 
+-- remap # to remain on current word and search forwards
+vim.keymap.set('n', '#', ':keepjumps normal! mi*`i<CR>')
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
@@ -40,12 +43,6 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-
--- mappings for leap
-vim.keymap.set('n', 's', '<Plug>(leap)')
-vim.keymap.set('n', 'S', '<Plug>(leap-from-window)')
-vim.keymap.set({ 'x', 'o' }, 's', '<Plug>(leap-forward)')
-vim.keymap.set({ 'x', 'o' }, 'S', '<Plug>(leap-backward)')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`

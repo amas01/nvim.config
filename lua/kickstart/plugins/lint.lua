@@ -2,11 +2,15 @@ return {
 
   { -- Linting
     'mfussenegger/nvim-lint',
+    dependencies = {
+      -- Automatically install lint and related tools to stdpath for Neovim
+      'williamboman/mason.nvim',
+      'rshkarin/mason-nvim-lint',
+    },
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {
-        lua = { 'luacheck' },
         markdown = { 'markdownlint' },
         python = { 'ruff' },
       }
