@@ -91,10 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed
-vim.g.have_nerd_font = false
-
--- set python location
-vim.g.python3_host_prog = ' ~/.virtualenvs/py3nvim/bin/python'
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 require 'options'
