@@ -28,10 +28,7 @@ return {
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
         ['<leader>l'] = { name = '[L]SP', _ = 'which_key_ignore' },
- {
-  'stevearc/dressing.nvim',
-  opts = {},
-}       ['<leader>g'] = { name = '[g]it', _ = 'which_key_ignore' },
+        ['<leader>g'] = { name = '[g]it', _ = 'which_key_ignore' },
       }
     end,
   },
