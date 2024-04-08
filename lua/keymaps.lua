@@ -15,6 +15,10 @@ vim.keymap.set('n', '<S-CR>', 'm`O<Esc>``')
 -- remap # to remain on current word and search forwards
 vim.keymap.set('n', '#', ':keepjumps normal! mi*`i<CR>')
 
+-- Keep selection after indention or dentention
+vim.keymap.set('v', '>', '>gv')
+vim.keymap.set('v', '<', '<gv')
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
