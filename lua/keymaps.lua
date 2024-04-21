@@ -6,7 +6,9 @@ vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- remap 0 to jump to begining of line, first non white space
-vim.keymap.set('n', '0', '_')
+vim.keymap.set({ 'n', 'v' }, '0', '_')
+-- remap - to jump to end of line
+vim.keymap.set({ 'n', 'v' }, '-', '$')
 
 -- map enter to insert a new line below and shift enter above
 vim.keymap.set('n', '<CR>', 'o<Esc>')
@@ -61,5 +63,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- map switch case
+require 'switch_case'
+vim.api.nvim_set_keymap('n', '<Leader>.', '<cmd>lua require("switch_case").switch_case()<CR>', { noremap = true, silent = true, desc = 'Switch Case' })
+
+-- open terminal
+vim.keymap.set('n', '<leader>t', ':terminal<CR>', { desc = '[T]erminal' })
 
 -- vim: ts=2 sts=2 sw=2 et

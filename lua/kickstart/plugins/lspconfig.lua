@@ -87,7 +87,7 @@ return {
           map('<leader>lr', vim.lsp.buf.rename, '[R]ename')
 
           -- Search references
-          map('<leader>lR', vim.lsp.buf.references, '[R]eferences')
+          map('<leader>lR', require('telescope.builtin').lsp_references, '[R]eferences')
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
