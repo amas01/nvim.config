@@ -15,7 +15,7 @@ return {
       -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
-      require('mini.surround').setup()
+      -- require('mini.surround').setup()
 
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
@@ -33,32 +33,32 @@ return {
       -- end
 
       -- mini animate - smooth motion while scroliing
-      local animate = require 'mini.animate'
-      local mouse_scrolled = false
-      for _, scroll in ipairs { 'Up', 'Down' } do
-        local key = '<ScrollWheel' .. scroll .. '>'
-        vim.keymap.set({ '', 'i' }, key, function()
-          mouse_scrolled = true
-          return key
-        end, { expr = true })
-      end
-      animate.setup {
-        resize = {
-          timing = animate.gen_timing.linear { duration = 100, unit = 'total' },
-        },
-        scroll = {
-          timing = animate.gen_timing.linear { duration = 150, unit = 'total' },
-          subscroll = animate.gen_subscroll.equal {
-            predicate = function(total_scroll)
-              if mouse_scrolled then
-                mouse_scrolled = false
-                return false
-              end
-              return total_scroll > 1
-            end,
-          },
-        },
-      }
+      -- local animate = require 'mini.animate'
+      -- local mouse_scrolled = false
+      -- for _, scroll in ipairs { 'Up', 'Down' } do
+      --   local key = '<ScrollWheel' .. scroll .. '>'
+      --   vim.keymap.set({ '', 'i' }, key, function()
+      --     mouse_scrolled = true
+      --     return key
+      --   end, { expr = true })
+      -- end
+      -- animate.setup {
+      -- resize = {
+      --   timing = animate.gen_timing.linear { duration = 100, unit = 'total' },
+      -- },
+      -- scroll = {
+      --   timing = animate.gen_timing.linear { duration = 150, unit = 'total' },
+      --   subscroll = animate.gen_subscroll.equal {
+      --     predicate = function(total_scroll)
+      --       if mouse_scrolled then
+      --         mouse_scrolled = false
+      --         return false
+      --       end
+      --       return total_scroll > 1
+      --     end,
+      --   },
+      -- },
+      -- }
 
       -- mini pairs - adds paired symbol automatically
       -- require('mini.pairs').setup()
