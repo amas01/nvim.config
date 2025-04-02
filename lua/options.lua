@@ -66,4 +66,13 @@ vim.opt.scrolloff = 10
 -- See `:help 'confirm'`
 vim.opt.confirm = true
 
+-- enable true terminal colors
+vim.opt.termguicolors = true
+
+-- set nowrap
+vim.opt.wrap = false
+
+-- for markdown files, save when navigating away
+vim.api.nvim_create_autocmd('FileType', { pattern = 'markdown', command = 'set awa' })
+
 -- vim: ts=2 sts=2 sw=2 et
